@@ -1,7 +1,7 @@
 <html>
 	<head>
 		{% load staticfiles %}
-		<link rel="stylesheet" type="text/css" href="{% static 'post/style.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'post/rltsStyle.css' %}" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<script type="text/javascript" src="{% static 'post/bs.js' %}"></script>
 		<title>Book Swap</title>
@@ -10,9 +10,11 @@
 		<div id="rltsBar">
 			<div id="rltsTtl">Book Swap</div>
 			<input id="srchBar" type="text" value="">
-			<div id = "srchBttn">
+			<div id = "srchBttn" class="bttn">
 				<div id="srchIcon"></div>
 			</div>
+			<div id="loginBttn" class="bttn">Log In</div>
+			<div id="signupBttn" class="bttn">Sign Up</div>
 		</div>
 
 		<div id="results">
