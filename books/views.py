@@ -6,15 +6,10 @@ from django.views import generic
 
 from books.models import Post
 
-class IndexView(generic.ListView):
-    template_name = 'post/index.html'
-    context_object_name = 'latest_post_list'
+def index(request):
+    return render(request, 'post/index.html')
 
-    def get_queryset(self):
-        """Return the last five published polls."""
-        return Post.objects.order_by('-pub_date')[:5]
-
-
-class DetailView(generic.DetailView):
-    model = Post
-    template_name = 'post/detail.html'
+def results(request):
+	latest_post = Post.objects.all().order_by('-pub_date')[:5]
+	context = {'latest_post': latest_post}
+	return render(request, 'post/results.html', context)

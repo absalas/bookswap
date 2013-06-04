@@ -1,9 +1,18 @@
-{% if latest_post_list %}
-    <ul>
-    {% for post in latest_post_list %}
-        <li><a href="{% url 'books:detail' post.id %}">{{ post.title }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No posts are available.</p>
-{% endif %}
+<html>
+	<head>
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'post/style.css' %}" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript" src="{% static 'post/bs.js' %}"></script>
+		<title>Book Swap</title>
+	</head>
+	<body>
+		<div id="initPg">
+			<h1>Book Swap</h1>
+			<input id="srchBar" type="text" value="">
+			<div id = "srchBttn">
+				<div id="srchIcon"></div>
+			</div>
+		</div>
+	<body>
+</html>

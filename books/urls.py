@@ -3,6 +3,6 @@ from django.conf.urls import patterns, url
 from books import views
 
 urlpatterns = patterns('',
-	url(r'^$', views.IndexView.as_view(), name='index'),
-    url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
+	url(r'^$', views.index, name='index'),
+	url(r'^results/$', views.results, name='results'),
 )

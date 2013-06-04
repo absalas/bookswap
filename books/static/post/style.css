@@ -1,0 +1,167 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: 'Raleway', sans-serif;
+	background-color: #ff6800;
+}
+
+#initPg{
+	width: 680px;
+	height: 200px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin-left: -330px;
+	margin-top: -100px;
+	z-index:2;
+	text-shadow: 5px 5px 15px black;
+}
+
+#initPg h1{
+	font-size: 90pt;
+	font-weight: 100;
+	color: #202020;
+	line-height: 95pt;
+	text-indent: 23px;
+}
+
+#srchBar{
+	width: 600px;
+	height: 25px;
+	position: absolute;
+	top: 80%;
+	left: 45%;
+	margin-left: -300px;
+	margin-top: -12px;
+	border: 1px solid;
+	border-color: #A0A0A0;
+	box-shadow: 3px 3px 3px #C8C8C8 inset;
+}
+
+#srchBar:hover{
+	border: 2px solid;
+	border-color: #00A6B2;
+	top: 79.5%;
+}
+
+#srchBttn{
+	background-color: #00A6B2;
+	width: 60px;
+	height: 30px;
+	position: absolute;
+	top: 79.5%;
+	left: 94.5%;
+	margin-left: -30px;
+	margin-top: -15px;
+	border: 1px solid;
+	border-color: #0093B2;
+	cursor: pointer;
+}
+
+#rltsBar{
+	background-color: #202020;
+	height: 60px;
+	width: 100%;
+	position: absolute;
+	z-index: 2;
+}
+
+#rltsBar #srchBar{
+	width: 600px;
+	height: 25px;
+	position: absolute;
+	top: 50%;
+	left: 45%;
+	margin-left: -300px;
+	margin-top: -12px;
+	border: 1px solid;
+	border-color: #A0A0A0;
+	box-shadow: 3px 3px 3px #C8C8C8 inset;
+}
+
+#rltsBar #srchBar:hover{
+	border: 2px solid;
+	border-color: #00A6B2;
+	top: 49.5%;
+}
+
+#rltsBar #srchBttn{
+	background-color: #00A6B2;
+	width: 60px;
+	height: 30px;
+	position: absolute;
+	top: 49%;
+	left: 70%;
+	margin-left: -30px;
+	margin-top: -15px;
+	border: 1px solid;
+	border-color: #0093B2;
+	cursor: pointer;
+}
+
+#rltsTtl{
+	font-size: 40pt;
+	font-weight: 100;
+	color: #E87E0C;
+	height: 40px;
+	width: 280px;
+	position: absolute;
+	top: 29%;
+	left: 11%;
+	margin-left: -140px;
+	margin-top: -20px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+#results{
+	top: 50px;
+	left: 50%;
+	
+	z-index: 4;
+	position: absolute;
+
+}
+.rltsPost{
+	background-color: #FFB445;
+	display: block;
+	height: 300px;
+	width: 700px;
+	margin-left: -330px;
+	margin-top: 30px;
+	z-index: 4;
+}
+
+#postinfo{
+	width: 70%;
+	height: 85%;
+	float: right;
+	font-size: 12pt;
+	font-weight: 100;
+	color: black;
+	line-height: 40px;
+	top: 300px;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+#postinfo h1{
+	font-size: 45px;
+	line-height: 50px;
+	padding-bottom: 10px;
+}
+
+.bookpics{
+	background-color: black;
+	color: white;
+	height: 225px;
+	width: 170px;
+	margin-top: 20px;
+	margin-left: 20px;
+	position: absolute;
+	z-index: 3;
+}
