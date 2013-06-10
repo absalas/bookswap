@@ -5,7 +5,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+     ('Alonso Salas', 'alonso.salas@utexas.edu'),
 )
 
 MANAGERS = ADMINS
@@ -162,3 +162,9 @@ LOGGING = {
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'alonso.salas@utexas.edu'
+EMAIL_HOST_PASSWORD = '30stmrocks'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

@@ -39,7 +39,7 @@ body{
 	margin-left: -300px;
 	margin-top: -15px;
 	border: 1px solid;
-	border-color: #A0A0A0;
+	border-color: #7A7A7A;
 	box-shadow: 0px 0px 3px 2px #C8C8C8 inset;
 }
 
@@ -62,6 +62,24 @@ body{
 #srchBttn{
 	top: 80%;
 	left: 94.5%;
+	margin-left: -30px;
+	margin-top: -15px;
+}
+
+#loginBttn{
+	line-height: 30px;
+	text-align: center;
+	top: 4%;
+	left: 92%;
+	margin-left: -30px;
+	margin-top: -15px;
+}
+
+#signupBttn{
+	line-height: 30px;
+	text-align: center;
+	top: 4%;
+	left: 97%;
 	margin-left: -30px;
 	margin-top: -15px;
 }
