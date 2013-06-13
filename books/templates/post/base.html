@@ -1,0 +1,41 @@
+<html>
+	{% load staticfiles %}
+	<head>
+		<script src="{% static 'js/jquery-1.10.1.min.js' %}"></script>
+		{% block style %}
+		<link rel="stylesheet" type="text/css" href="{% static 'post/rltsStyle.css' %}"/>
+		<script type="text/javascript" src="{% static 'post/bs.js' %}"></script>
+		{% endblock %}
+		<title>Book Swap</title>
+	</head>
+	<body>
+		{% block header %}
+		<div id="rltsBar">
+			<div id="rltsTtl"><a href="{% url 'index' %}">Book Swap</a></div>
+
+			{% block searchbar %}
+			<input id="srchBar" type="text" value="">
+			<div id = "srchBttn" class="bttn">
+				<a href="{% url 'results' %}"><div id="srchIcon"></div></a>
+			</div>
+			{% endblock %}
+
+			{% block buttons %}
+			<div>
+		    	{% if user.is_authenticated %}
+					<div id="loginBttn" class="bttn"><a href="{% url 'profile' %}">{{ user.username }}</div>
+					<div id="signupBttn" class="bttn"><a href="{% url 'auth_logout' %}">Log out</a></div>
+		    	{% else %}
+					<div id="loginBttn" class="bttn"><a href="{% url 'auth_login' %}">Log in</a></div>
+					<div id="signupBttn" class="bttn"><a href="{% url 'registration_register' %}">Sign Up</a></div>
+		    	{% endif %}
+			</div>
+			{% endblock %}
+		</div>
+		{% endblock %}
+
+		{% block content %}
+		
+		{% endblock %}
+	<body>
+</html>

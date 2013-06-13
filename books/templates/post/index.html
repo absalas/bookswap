@@ -1,20 +1,27 @@
-<html>
-	<head>
-		{% load staticfiles %}
-		<link rel="stylesheet" type="text/css" href="{% static 'post/style.css' %}" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-		<script type="text/javascript" src="{% static 'post/bs.js' %}"></script>
-		<title>Book Swap</title>
-	</head>
-	<body>
-		<div id="initPg">
-			<h1>Book Swap</h1>
-			<input id="srchBar" type="text" value="">
-			<div id = "srchBttn" class="bttn">
-				<div id="srchIcon"></div>
+
+{% extends "post/base.html" %}
+{% load staticfiles %}
+{% block style%}
+<link rel="stylesheet" type="text/css" href="{% static 'post/style.css' %}" />
+<script type="text/javascript" src="{% static 'post/bs.js' %}"></script>	
+{% endblock %}
+
+{% block header %}
+	{% block buttons %}
+		{{ block.super }}
+	{% endblock %}
+{% endblock %}
+
+
+{% block content %}
+<div id="initPg">
+	<h1>Book Swap</h1>
+	<input id="srchBar" type="text" value="">
+	<div id = "srchBttn" class="bttn">
+		<a href="{% url 'results' %}">
+			<div id="srchIcon">
 			</div>
-		</div>
-		<div id="loginBttn" class="bttn">Log In</div>
-		<div id="signupBttn" class="bttn">Sign Up</div>
-	<body>
-</html>
+		</a>
+	</div>
+</div>
+{% endblock %}

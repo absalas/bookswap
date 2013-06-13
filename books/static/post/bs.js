@@ -1,10 +1,12 @@
 $(document).ready(function() {
-	var mainUrl = "http://127.0.0.1:8000/main/";
-	$('#initPg #srchBttn').click(function() {
-		document.location = mainUrl + "results"
-	});
-
-	$('#rltsTtl').click(function() {
-		document.location = mainUrl
-	});
+	$('.contactBttn').click(function(){
+		var info = "#CI" + $(this).attr('id');
+		if($(info).is(':visible')){
+			$(info).fadeOut();
+		}
+		else{
+			$(info).fadeIn();
+		}
+		
+	})
 });

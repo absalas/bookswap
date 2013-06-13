@@ -1,0 +1,56 @@
+{% extends "post/base.html" %}
+
+{% load staticfiles %}
+{% block style%}
+<link rel="stylesheet" type="text/css" href="{% static 'user/style.css' %}" />
+<script type="text/javascript" src="{% static 'user/bs.js' %}"></script>
+{% endblock %}
+
+{% block header %}
+    {{ block.super }}
+    <div id="userActions">
+            <span id="addPost" class="userBttn">Add Post</span>
+            <span id="viewPost" class="userBttn">View My Posts</span>
+    </div>
+    <span id="changePW"><a href="{% url 'auth_password_change' %}">Change Password</a></span>
+
+{% endblock %}
+
+{% block searchbar %}
+{% endblock %}
+
+{% block content %}
+
+
+<div id="results">
+{% if user_posts %}
+    {% for post in user_posts%}
+    <div class="rltsPost">
+        <div id="postinfo">
+            <h1>{{ post.title }}</h1>
+            <p>Author: {{ post.author }}</p>
+            <p>Publisher: {{ post.publisher }}</p>
+            <p>Edition: {{ post.edition }}</p>
+            <p>ISBN: {{ post.isbn }}</p>
+            <p>Date Posted: {{ post.pub_date }}</p>
+        </div>
+        
+    </div>
+    {% endfor %}
+
+{% else %}
+    <p id="none">No post are available.</p>
+{% endif %}
+</div>
+
+<div id="postForm">
+    <form method="post" action=".">
+      {% csrf_token %} 
+      {{ form.as_p }}
+
+      <input type="submit" value="Post" />
+    </form>
+<div>
+
+
+{% endblock%}

@@ -54,11 +54,6 @@ a{
 	top: 80.3%;
 }
 
-#srchBar:focus{
-	outline: none;
-	border-color: #00A6B2
-}
-
 .bttn{
 	background-color: #00A6B2;
 	width: 60px;
@@ -74,17 +69,6 @@ a{
 	left: 94.5%;
 	margin-left: -30px;
 	margin-top: -15px;
-}
-
-#srchIcon{
-	background: url("images/search.png") no-repeat right bottom;
-	background-size: 25px 25px;
-	position: absolute;
-	height: 25px;
-	width: 25px;
-	top: 2px;
-	left: 15px;
-	cursor: pointer;
 }
 
 #loginBttn{

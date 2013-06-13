@@ -1,43 +1,31 @@
-<html>
-	<head>
-		{% load staticfiles %}
-		<link rel="stylesheet" type="text/css" href="{% static 'post/rltsStyle.css' %}" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-		<script type="text/javascript" src="{% static 'post/bs.js' %}"></script>
-		<title>Book Swap</title>
-	</head>
-	<body>
-		<div id="rltsBar">
-			<div id="rltsTtl">Book Swap</div>
-			<input id="srchBar" type="text" value="">
-			<div id = "srchBttn" class="bttn">
-				<div id="srchIcon"></div>
-			</div>
-			<div id="loginBttn" class="bttn">Log In</div>
-			<div id="signupBttn" class="bttn">Sign Up</div>
-		</div>
+{% extends "post/base.html" %}
 
+{% block content %}
+{% if latest_post %}
 		<div id="results">
-		{% if latest_post %}
-			    {% for post in latest_post%}
-				<div class="rltsPost">
-					<div class="bookpics">
-						<p>NO IMAGE</p>
-					</div>
-					<div id="postinfo">
-						<h1>{{ post.title }}</h1>
-				        <p>Author: {{ post.author }}</p>
-				        <p>Publisher: {{ post.publisher }}</p>
-				        <p>Edition: {{ post.edition }}</p>
-				        <p>ISBN: {{ post.isbn }}</p>
-				        <p>Date Posted: {{ post.pub_date }}</p>
-			    	</div>
-			        
-				</div>
-		   		{% endfor %}
-		{% else %}
-		    <p>No post are available.</p>
-		{% endif %}
-		</div>
-	<body>
-</html>
+		    {% for post in latest_post%}
+			<div class="rltsPost">
+				<div id="postinfo">
+					<h1>{{ post.title }}</h1>
+			        <p>Author: {{ post.author }}</p>
+			        <p>Publisher: {{ post.publisher }}</p>
+			        <p>Edition: {{ post.edition }}</p>
+			        <p>ISBN: {{ post.isbn }}</p>
+			        <p>Date Posted: {{ post.pub_date }}</p>
+		    	</div>
+		    	<div id="{{forloop.counter}}" class="contactBttn">Contact Info</div>
+		    	<div id="CI{{forloop.counter}}"  class="contactInfo">
+		    		{% if user.is_authenticated %}
+		    			<p>{{ post.posted_by.email }}</p>
+		    		{% else %}
+		    			<p>Please register or log in to see the contact information.</p>
+		    		{% endif %}
+		    	</div>
+			</div>
+   			{% endfor %}
+   		</div>
+{% else %}
+    <p id="none">No post are available.</p>
+{% endif %}
+
+{% endblock %}
